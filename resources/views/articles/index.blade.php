@@ -41,6 +41,7 @@
                 @endforeach
             </tbody>
         </table>  
+        <a class="btn btn-primary" href="{{route('articles.create')}}">Crea un nuovo Post</a>
     </div>
 </body>
 </html>

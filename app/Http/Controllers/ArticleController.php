@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Article;
+use Illuminate\Support\Str;
 
 class ArticleController extends Controller
 {
@@ -25,8 +26,8 @@ class ArticleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    {   
+        return view('articles.create');
     }
 
     /**
@@ -37,7 +38,14 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $newArticle = new Article();
+        $newArticle->slug = Str::slug($newArticle['title'] , '-');
+        $newArticle->fill($data);
+        $newArticle->save();
+
+        return redirect()->route('articles.index');
+
     }
 
     /**
