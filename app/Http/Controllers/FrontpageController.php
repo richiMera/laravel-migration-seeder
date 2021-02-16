@@ -13,4 +13,11 @@ class FrontpageController extends Controller
 
         return view ('frontpages.index', compact('articles'));
     }
+
+    public function show($slug) {
+        $article = Article::where('slug', $slug)->first();
+
+
+        return view ('frontpages.show', compact('article'));
+    }
 }

@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 // // Route::get('/', function () {
 // //     return view('welcome');
 // // });
-Route::get('frontpages', 'FrontpageController@index');
+Route::get('frontpages', 'FrontpageController@index')->name('frontpages.index');
+Route::get('frontpages/{slug}', 'FrontpageController@show')->name('frontpages.show');
 
 Route::resource('articles', 'ArticleController');

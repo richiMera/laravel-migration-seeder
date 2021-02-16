@@ -18,13 +18,14 @@
                 <div class="col-sm-6">
                     <div class="card my-3">
                         <div class="card-body">
-                          <h5 class="card-title">{{$article->title}}</h5>
-                          <p class="card-text">{{$article->subtitle}}</p>
-                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                          <h2 class="card-title">{{$article->title}}</h2>
+                          <span>by {{$article->author}}</span>
+                          <h5 class="card-title">{{$article->subtitle}}</h5>
+                          <p class="card-text">{{$article->content}}</p>
+                          <small class="text-right">{{$article->created_at}}</small>
+                          <a href="{{route('frontpages.show', $article->slug)}}" class="btn btn-primary">Read more</a>
                         </div>
-                      </div>
-                   
-                  
+                      </div> 
                 </div>
                 @endforeach
         </div>
