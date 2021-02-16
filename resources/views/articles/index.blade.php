@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container">
-        <table class="table table-dark">
+        <table class="table table-striped table-dark table-bordered table-hover">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -28,15 +28,15 @@
                     <td>{{$article->author}}</td>
                     <td>{{$article->created_at}}</td>
                     <td><a href="{{route('articles.show', $article->slug)}}" class="btn btn-secondary">Mostra</a></td>
-                    {{-- <td><a href="{{route('beers.edit', $article->id)}}" class="btn btn-secondary">Edit</a></td>
-                    <td>
-                        <form action="{{route('beers.destroy', $article->id)}}" method="post">
+                     <td><a href="{{route('articles.edit', $article->id)}}" class="btn btn-secondary">Edit</a></td>
+                     <td>
+                        <form action="{{route('articles.destroy', $article->id)}}" method="post">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-danger">Delete</button>
                         </form>
                         
-                    </td> --}}
+                    </td>
                </tr>
                 @endforeach
             </tbody>
